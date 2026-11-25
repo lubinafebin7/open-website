@@ -1,4 +1,3 @@
-
 pipeline {
     agent none
 
@@ -7,7 +6,7 @@ pipeline {
         DOCKERHUB_REPOSITORY = 'companywebsite'
         IMAGE_NAME = 'lubina123/companywebsite'
         CONTAINER_NAME = 'company-website'
-        GITHUB_REPOSITORY_URL = 'https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git'
+        GITHUB_REPOSITORY_URL = 'https://github.com/lubinafebin7/open-website.git'
     }
 
     stages {
@@ -19,7 +18,7 @@ pipeline {
 
             steps {
                 git branch: 'main',
-                    url: "${GITHUB_REPOSITORY_URL}"
+                    url: "${https://github.com/lubinafebin7/open-website.git}"
 
                 sh 'docker build -t $IMAGE_NAME:latest .'
             }
